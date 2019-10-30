@@ -67,6 +67,12 @@ function callES(server, url, method, data, successCallback, completeCallback) {
     $.ajax({
         url: url,
         data: method == "GET" ? null : data,
+        contentType: "application/json",
+        accept: "application/json;*.*",
+        headers: {
+            "X-Booking-Topic": "sense",
+            "X-Booking-Timeout-Ms": 2000 
+        },
 //      xhrFields: {
 //            withCredentials: true
 //      },
